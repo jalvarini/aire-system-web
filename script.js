@@ -43,39 +43,58 @@
   });
 
   /* ---------- Project gallery modal ---------- */
-  const galleryImages = Array.from({ length: 12 }, (_, i) => {
-    const n = String(i + 1).padStart(2, "0");
-    return {
-      src: `clima-${n}.jpg`,
-      alt: `Proyecto de climatización ${i + 1}`,
-    };
-  });
+  const galleries = {
+    climatizacion: {
+      title: "Proyectos de climatizacion",
+      images: Array.from({ length: 12 }, (_, i) => {
+        const n = String(i + 1).padStart(2, "0");
+        return {
+          src: `clima-${n}.jpg`,
+          alt: `Proyecto de climatización ${i + 1}`,
+        };
+      }),
+    },
+    electricas: {
+      title: "Proyectos de soluciones electricas",
+      images: Array.from({ length: 3 }, (_, i) => {
+        const n = String(i + 1).padStart(2, "0");
+        return {
+          src: `electrica-proy-${n}.jpg`,
+          alt: `Proyecto de soluciones eléctricas ${i + 1}`,
+        };
+      }),
+    },
+  };
 
   const galleryModal = document.querySelector("#gallery-modal");
+  const galleryTitle = galleryModal?.querySelector("#gallery-modal-title");
   const galleryImage = galleryModal?.querySelector("[data-gallery-image]");
   const galleryCurrent = galleryModal?.querySelector("[data-gallery-current]");
   const galleryTotal = galleryModal?.querySelector("[data-gallery-total]");
   const galleryTriggers = document.querySelectorAll("[data-gallery]");
+  let activeGallery = galleries.climatizacion;
   let galleryIndex = 0;
   let galleryLastFocus = null;
 
   const renderGallery = () => {
-    if (!galleryImage || !galleryCurrent || !galleryTotal) return;
-    const item = galleryImages[galleryIndex];
+    if (!galleryImage || !galleryCurrent || !galleryTotal || !activeGallery) return;
+    const item = activeGallery.images[galleryIndex];
     galleryImage.src = item.src;
     galleryImage.alt = item.alt;
     galleryCurrent.textContent = String(galleryIndex + 1);
-    galleryTotal.textContent = String(galleryImages.length);
+    galleryTotal.textContent = String(activeGallery.images.length);
+    if (galleryTitle) galleryTitle.textContent = activeGallery.title;
   };
 
-  const openGallery = (startIndex = 0) => {
-    if (!galleryModal) return;
+  const openGallery = (galleryKey, startIndex = 0) => {
+    if (!galleryModal || !galleries[galleryKey]) return;
     galleryLastFocus = document.activeElement;
+    activeGallery = galleries[galleryKey];
     galleryIndex = startIndex;
     renderGallery();
     galleryModal.hidden = false;
     document.body.classList.add("gallery-open");
-    galleryModal.querySelector("[data-gallery-close]")?.focus();
+    galleryModal.querySelector(".gallery-close")?.focus();
   };
 
   const closeGallery = () => {
@@ -88,13 +107,16 @@
   };
 
   const stepGallery = (delta) => {
-    const total = galleryImages.length;
+    if (!activeGallery) return;
+    const total = activeGallery.images.length;
     galleryIndex = (galleryIndex + delta + total) % total;
     renderGallery();
   };
 
   galleryTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", () => openGallery(0));
+    trigger.addEventListener("click", () => {
+      openGallery(trigger.getAttribute("data-gallery") || "climatizacion", 0);
+    });
   });
 
   galleryModal?.querySelectorAll("[data-gallery-close]").forEach((el) => {
