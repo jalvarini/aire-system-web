@@ -156,15 +156,19 @@ ol {
 }
 
 .logo-img {
-  height: 46px;
+  display: block;
+  height: 58px;
   width: auto;
-  max-width: min(200px, 52vw);
+  aspect-ratio: 1 / 1;
+  max-height: 58px;
   object-fit: contain;
-  object-position: left center;
+  object-position: center;
+  flex-shrink: 0;
 }
 
 .logo-footer .logo-img {
-  height: 42px;
+  height: 52px;
+  max-height: 52px;
 }
 
 .nav-toggle {
@@ -881,7 +885,8 @@ ol {
   }
 
   .logo-img {
-    height: 40px;
+    height: 52px;
+    max-height: 52px;
   }
 
   .nav-toggle {
