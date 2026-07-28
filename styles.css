@@ -144,7 +144,7 @@ ol {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
 }
 
@@ -460,6 +460,37 @@ ol {
   color: rgba(255, 255, 255, 0.82);
 }
 
+.about-pillars {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2rem, var(--max));
+  margin: 0 auto;
+  padding: 0 0 var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.pillar {
+  padding: 1.25rem 1.1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  backdrop-filter: blur(8px);
+}
+
+.pillar h3 {
+  color: var(--cyan);
+  font-size: 1.05rem;
+  margin-bottom: 0.55rem;
+}
+
+.pillar p {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
 /* =========================================================
    Services gallery cards
    ========================================================= */
@@ -584,6 +615,55 @@ ol {
   color: var(--gray);
   max-width: 24ch;
   font-weight: 300;
+}
+
+/* =========================================================
+   Projects gallery
+   ========================================================= */
+
+.projects {
+  padding: var(--space-6) 0;
+  background: var(--light);
+}
+
+.project-grid {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.project-media {
+  margin: 0;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.project-card h3 {
+  margin: 0;
+  padding: 1rem 1.15rem 1.2rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--blue);
 }
 
 /* =========================================================
@@ -848,6 +928,10 @@ ol {
     grid-template-columns: 1fr;
   }
 
+  .about-pillars {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .stats {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -861,7 +945,8 @@ ol {
     border-right: 0;
   }
 
-  .service-grid {
+  .service-grid,
+  .project-grid {
     grid-template-columns: 1fr;
   }
 
@@ -943,6 +1028,10 @@ ol {
 
   .stat:last-child {
     border-bottom: 0;
+  }
+
+  .about-pillars {
+    grid-template-columns: 1fr;
   }
 
   .process-list {
