@@ -666,6 +666,164 @@ ol {
   color: var(--blue);
 }
 
+.project-card-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: inherit;
+  color: inherit;
+  font: inherit;
+}
+
+.project-card-gallery {
+  transition: transform 0.35s var(--ease);
+}
+
+.project-card-gallery:hover {
+  transform: translateY(-4px);
+}
+
+.project-card-gallery .project-media {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.project-card-gallery .project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   Gallery modal
+   ========================================================= */
+
+.gallery-modal[hidden] {
+  display: none;
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.gallery-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 42, 82, 0.82);
+}
+
+.gallery-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 56rem);
+  max-height: min(92vh, 52rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.gallery-modal-toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.gallery-modal-toolbar h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  max-width: none;
+}
+
+.gallery-counter {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.gallery-close {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--white);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-close:hover {
+  color: var(--cyan);
+}
+
+.gallery-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.75rem;
+  background: var(--light);
+  min-height: 18rem;
+}
+
+.gallery-figure {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: min(72vh, 40rem);
+  overflow: hidden;
+}
+
+.gallery-figure img {
+  max-width: 100%;
+  max-height: min(72vh, 40rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.gallery-nav {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--blue);
+  font-size: 1.25rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.gallery-nav:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+body.gallery-open {
+  overflow: hidden;
+}
+
 /* =========================================================
    Contact
    ========================================================= */

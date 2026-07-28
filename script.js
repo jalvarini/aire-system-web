@@ -42,6 +42,90 @@
     if (event.key === "Escape") setMenuOpen(false);
   });
 
+  /* ---------- Project gallery modal ---------- */
+  const galleryImages = Array.from({ length: 12 }, (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+    return {
+      src: `clima-${n}.jpg`,
+      alt: `Proyecto de climatización ${i + 1}`,
+    };
+  });
+
+  const galleryModal = document.querySelector("#gallery-modal");
+  const galleryImage = galleryModal?.querySelector("[data-gallery-image]");
+  const galleryCurrent = galleryModal?.querySelector("[data-gallery-current]");
+  const galleryTotal = galleryModal?.querySelector("[data-gallery-total]");
+  const galleryTriggers = document.querySelectorAll("[data-gallery]");
+  let galleryIndex = 0;
+  let galleryLastFocus = null;
+
+  const renderGallery = () => {
+    if (!galleryImage || !galleryCurrent || !galleryTotal) return;
+    const item = galleryImages[galleryIndex];
+    galleryImage.src = item.src;
+    galleryImage.alt = item.alt;
+    galleryCurrent.textContent = String(galleryIndex + 1);
+    galleryTotal.textContent = String(galleryImages.length);
+  };
+
+  const openGallery = (startIndex = 0) => {
+    if (!galleryModal) return;
+    galleryLastFocus = document.activeElement;
+    galleryIndex = startIndex;
+    renderGallery();
+    galleryModal.hidden = false;
+    document.body.classList.add("gallery-open");
+    galleryModal.querySelector("[data-gallery-close]")?.focus();
+  };
+
+  const closeGallery = () => {
+    if (!galleryModal || galleryModal.hidden) return;
+    galleryModal.hidden = true;
+    document.body.classList.remove("gallery-open");
+    if (galleryLastFocus && typeof galleryLastFocus.focus === "function") {
+      galleryLastFocus.focus();
+    }
+  };
+
+  const stepGallery = (delta) => {
+    const total = galleryImages.length;
+    galleryIndex = (galleryIndex + delta + total) % total;
+    renderGallery();
+  };
+
+  galleryTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => openGallery(0));
+  });
+
+  galleryModal?.querySelectorAll("[data-gallery-close]").forEach((el) => {
+    el.addEventListener("click", closeGallery);
+  });
+
+  galleryModal?.querySelector("[data-gallery-prev]")?.addEventListener("click", () => {
+    stepGallery(-1);
+  });
+
+  galleryModal?.querySelector("[data-gallery-next]")?.addEventListener("click", () => {
+    stepGallery(1);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (!galleryModal || galleryModal.hidden) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeGallery();
+      return;
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      stepGallery(-1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      stepGallery(1);
+    }
+  });
+
   const revealTargets = document.querySelectorAll(
     ".section-head, .about-inner, .about-pillars, .service-grid, .process-list, .project-grid, .contact-shell"
   );
