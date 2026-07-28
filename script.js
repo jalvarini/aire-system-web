@@ -7,13 +7,11 @@
   const yearEl = document.querySelector("#year");
   const form = document.querySelector("#form-contacto");
   const formStatus = document.querySelector("#form-status");
-  const servicePanels = document.querySelectorAll("[data-service]");
 
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
 
-  /* ---------- Header scroll state ---------- */
   const updateHeader = () => {
     if (!header) return;
     header.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -22,7 +20,6 @@
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
 
-  /* ---------- Mobile navigation ---------- */
   const setMenuOpen = (open) => {
     if (!header || !navToggle || !nav) return;
     header.classList.toggle("menu-open", open);
@@ -45,34 +42,8 @@
     if (event.key === "Escape") setMenuOpen(false);
   });
 
-  /* ---------- Service accordion ---------- */
-  const setActivePanel = (panel) => {
-    servicePanels.forEach((item) => {
-      const isActive = item === panel;
-      item.classList.toggle("is-active", isActive);
-      const trigger = item.querySelector(".service-trigger");
-      if (trigger) trigger.setAttribute("aria-expanded", String(isActive));
-    });
-  };
-
-  servicePanels.forEach((panel) => {
-    const trigger = panel.querySelector(".service-trigger");
-    trigger?.addEventListener("click", () => {
-      if (panel.classList.contains("is-active")) {
-        // Keep one open on desktop; allow collapse only on small screens
-        if (window.matchMedia("(max-width: 720px)").matches) {
-          panel.classList.remove("is-active");
-          trigger.setAttribute("aria-expanded", "false");
-        }
-        return;
-      }
-      setActivePanel(panel);
-    });
-  });
-
-  /* ---------- Reveal on scroll ---------- */
   const revealTargets = document.querySelectorAll(
-    ".section-head, .service-stack, .about-content, .process-list, .contact-intro, .contact-form"
+    ".section-head, .about-inner, .service-grid, .process-list, .contact-shell"
   );
 
   revealTargets.forEach((el) => el.classList.add("reveal"));
@@ -87,7 +58,7 @@
           }
         });
       },
-      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
 
     revealTargets.forEach((el) => observer.observe(el));
@@ -95,7 +66,6 @@
     revealTargets.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ---------- Contact form validation ---------- */
   const validators = {
     nombre: (value) => {
       if (!value.trim()) return "Ingrese su nombre.";
@@ -165,7 +135,9 @@
     if (!validateForm()) {
       formStatus.textContent = "Revise los campos marcados.";
       formStatus.classList.add("is-error");
-      const firstInvalid = form.querySelector(".field.is-invalid input, .field.is-invalid select, .field.is-invalid textarea");
+      const firstInvalid = form.querySelector(
+        ".field.is-invalid input, .field.is-invalid select, .field.is-invalid textarea"
+      );
       firstInvalid?.focus();
       return;
     }
@@ -173,7 +145,6 @@
     formStatus.classList.remove("is-error");
     formStatus.textContent = "Solicitud lista. Nos pondremos en contacto pronto.";
     form.reset();
-
     Object.keys(validators).forEach((name) => showFieldError(name, ""));
   });
 })();

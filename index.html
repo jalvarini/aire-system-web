@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AIRE SYSTEM — Climatización, Energía y Seguridad a su alcance. Mini Split, Chiller, VRF, sistemas eléctricos y videovigilancia en El Salvador.">
-  <title>AIRE SYSTEM | Climatización, Energía y Seguridad</title>
+  <meta name="description" content="AIRE SYSTEM — Climatizacion, Energia y Seguridad a su alcance. Mini Split, Chiller, VRF, sistemas eléctricos y videovigilancia en El Salvador.">
+  <title>AIRE SYSTEM | Climatizacion, Energia y Seguridad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
@@ -16,20 +16,7 @@
   <header class="site-header" id="inicio">
     <div class="header-inner">
       <a class="logo" href="#inicio" aria-label="AIRE SYSTEM — inicio">
-        <svg class="logo-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
-          <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 3v26"/>
-            <path d="M5.5 9.5l21 13"/>
-            <path d="M5.5 22.5l21-13"/>
-            <path d="M16 7l-2.2-2.2M16 7l2.2-2.2"/>
-            <path d="M16 25l-2.2 2.2M16 25l2.2 2.2"/>
-            <path d="M8.8 11.5l-3-.2M8.8 11.5l-1.4 2.6"/>
-            <path d="M23.2 20.5l3 .2M23.2 20.5l1.4-2.6"/>
-            <path d="M8.8 20.5l-3 .2M8.8 20.5l-1.4-2.6"/>
-            <path d="M23.2 11.5l3-.2M23.2 11.5l1.4 2.6"/>
-          </g>
-        </svg>
-        <span class="logo-text">AIRE SYSTEM</span>
+        <img src="logo.png" alt="Aire System" width="180" height="48" class="logo-img">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú">
         <span></span>
@@ -37,8 +24,8 @@
       </button>
       <nav class="nav" id="nav-principal" aria-label="Principal">
         <ul>
-          <li><a href="#servicios">Servicios</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
           <li><a href="#proceso">Proceso</a></li>
           <li><a href="#contacto" class="nav-cta">Cotizar</a></li>
         </ul>
@@ -47,7 +34,7 @@
   </header>
 
   <main id="contenido">
-    <section class="hero" aria-labelledby="hero-brand">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
         <img
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80"
@@ -59,126 +46,120 @@
         <div class="hero-veil"></div>
       </div>
       <div class="hero-content">
-        <p class="hero-brand" id="hero-brand">AIRE SYSTEM</p>
-        <h1>Climatizacion, Energia y Seguridad a su alcance.</h1>
-        <p class="hero-lead">Soluciones técnicas para hogares y empresas en El Salvador: climatización, sistemas eléctricos y videovigilancia.</p>
+        <p class="hero-brand">AIRE SYSTEM</p>
+        <h1 id="hero-title">Climatizacion, Energia y Seguridad a su alcance.</h1>
+        <p class="hero-lead">Soluciones técnicas para hogares y empresas en El Salvador.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+          <a class="btn btn-cyan" href="#contacto">Solicitar cotización</a>
           <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Servicios principales">
+      <div class="ticker-track">
+        <span>Climatizacion</span>
+        <span aria-hidden="true">·</span>
+        <span>Sistemas Electricos</span>
+        <span aria-hidden="true">·</span>
+        <span>Videovigilancia</span>
+        <span aria-hidden="true">·</span>
+        <span>Mantenimiento</span>
+        <span aria-hidden="true">·</span>
+        <span>Climatizacion</span>
+        <span aria-hidden="true">·</span>
+        <span>Sistemas Electricos</span>
+        <span aria-hidden="true">·</span>
+        <span>Videovigilancia</span>
+        <span aria-hidden="true">·</span>
+        <span>Mantenimiento</span>
+        <span aria-hidden="true">·</span>
+      </div>
+    </div>
+
+    <section class="about" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="about-bg" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80"
+          alt=""
+          width="1600"
+          height="1067"
+          loading="lazy"
+        >
+        <div class="about-veil"></div>
+      </div>
+      <div class="about-inner">
+        <div class="about-copy">
+          <p class="eyebrow">Nosotros</p>
+          <h2 id="nosotros-title">Profesionalismo técnico y atención cercana.</h2>
+          <p>Empresa salvadoreña especializada en climatización, sistemas eléctricos y videovigilancia. Instalamos, mantenemos y acompañamos proyectos residenciales y comerciales con resultados claros.</p>
+        </div>
+        <div class="stats" role="list">
+          <div class="stat" role="listitem">
+            <p class="stat-value">10+</p>
+            <p class="stat-label">Años de experiencia</p>
+          </div>
+          <div class="stat" role="listitem">
+            <p class="stat-value">500+</p>
+            <p class="stat-label">Proyectos realizados</p>
+          </div>
+          <div class="stat" role="listitem">
+            <p class="stat-value">98%</p>
+            <p class="stat-label">Clientes satisfechos</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="services" id="servicios" aria-labelledby="servicios-title">
       <div class="section-head">
-        <h2 id="servicios-title">Servicios técnicos con cobertura completa.</h2>
+        <p class="eyebrow">Servicios</p>
+        <h2 id="servicios-title">Soluciones para cada necesidad técnica.</h2>
         <p>Venta, instalación, proyectos y mantenimiento con el respaldo de un equipo especializado.</p>
       </div>
 
-      <div class="service-stack" role="list">
-        <article class="service-panel is-active" role="listitem" data-service>
-          <button type="button" class="service-trigger" aria-expanded="true">
-            <span class="service-index" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">
-                <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-                  <path d="M12 2.5v19"/>
-                  <path d="M4.2 7.5l15.6 9"/>
-                  <path d="M4.2 16.5l15.6-9"/>
-                </g>
-              </svg>
-            </span>
-            <span class="service-name">Climatizacion</span>
-            <span class="service-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="service-body">
-            <div class="service-copy">
-              <p>Sistemas de climatización para confort residencial y comercial, con venta, instalación y mantenimiento.</p>
-              <ul>
-                <li>Mini Split</li>
-                <li>Chiller</li>
-                <li>VRF</li>
-                <li>Venta, instalación y mantenimiento</li>
-              </ul>
-            </div>
-            <figure class="service-visual">
+      <div class="service-grid">
+        <article class="service-card">
+          <a href="#contacto" class="service-card-link">
+            <figure class="service-card-media">
               <img src="https://images.unsplash.com/photo-1631545806609-2ebd89712b0b?auto=format&fit=crop&w=1200&q=80" alt="Equipo de climatización instalado" width="1200" height="800" loading="lazy">
             </figure>
-          </div>
+            <div class="service-card-body">
+              <h3>Climatizacion</h3>
+              <p>Mini Split · Chiller · VRF — venta, instalación y mantenimiento.</p>
+            </div>
+          </a>
         </article>
 
-        <article class="service-panel" role="listitem" data-service>
-          <button type="button" class="service-trigger" aria-expanded="false">
-            <span class="service-index" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">
-                <path d="M13 2 4 14h7l-1 8 10-14h-7l0-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span class="service-name">Sistemas Electricos</span>
-            <span class="service-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="service-body">
-            <div class="service-copy">
-              <p>Proyectos eléctricos seguros y ordenados para residencias, comercios e instalaciones técnicas.</p>
-              <ul>
-                <li>Instalaciones</li>
-                <li>Tableros de distribución</li>
-                <li>Proyectos</li>
-                <li>Mantenimiento preventivo</li>
-              </ul>
-            </div>
-            <figure class="service-visual">
+        <article class="service-card">
+          <a href="#contacto" class="service-card-link">
+            <figure class="service-card-media">
               <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80" alt="Instalación de sistemas eléctricos" width="1200" height="800" loading="lazy">
             </figure>
-          </div>
+            <div class="service-card-body">
+              <h3>Sistemas Electricos</h3>
+              <p>Instalaciones · Tableros de distribución · Proyectos · Mantenimiento preventivo.</p>
+            </div>
+          </a>
         </article>
 
-        <article class="service-panel" role="listitem" data-service>
-          <button type="button" class="service-trigger" aria-expanded="false">
-            <span class="service-index" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">
-                <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M3 12c2.4-4.2 5.8-6.4 9-6.4S18.6 7.8 21 12c-2.4 4.2-5.8 6.4-9 6.4S5.4 16.2 3 12z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-              </svg>
-            </span>
-            <span class="service-name">Videovigilancia</span>
-            <span class="service-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="service-body">
-            <div class="service-copy">
-              <p>Sistemas de seguridad con visión clara, grabación confiable y acceso para monitoreo continuo.</p>
-              <ul>
-                <li>CCTV</li>
-                <li>Cámaras IP</li>
-                <li>Monitoreo</li>
-              </ul>
-            </div>
-            <figure class="service-visual">
+        <article class="service-card">
+          <a href="#contacto" class="service-card-link">
+            <figure class="service-card-media">
               <img src="https://images.unsplash.com/photo-1557597774-9c82ea98d1ee?auto=format&fit=crop&w=1200&q=80" alt="Cámara de videovigilancia" width="1200" height="800" loading="lazy">
             </figure>
-          </div>
+            <div class="service-card-body">
+              <h3>Videovigilancia</h3>
+              <p>CCTV · Cámaras IP · Monitoreo.</p>
+            </div>
+          </a>
         </article>
-      </div>
-    </section>
-
-    <section class="about" id="nosotros" aria-labelledby="nosotros-title">
-      <div class="about-media">
-        <img
-          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1400&q=80"
-          alt="Técnico especializado trabajando en instalación"
-          width="1400"
-          height="933"
-          loading="lazy"
-        >
-      </div>
-      <div class="about-content">
-        <h2 id="nosotros-title">Empresa salvadoreña con enfoque técnico y atención cercana.</h2>
-        <p>En AIRE SYSTEM unimos climatización, energía y seguridad para proyectos que necesitan resultados claros: instalación correcta, plazos realistas y soporte después de la entrega.</p>
-        <p>Atendemos residencias, comercios y oficinas en El Salvador con recomendaciones honestas según el espacio y el uso.</p>
       </div>
     </section>
 
     <section class="process" id="proceso" aria-labelledby="proceso-title">
       <div class="section-head">
+        <p class="eyebrow">Proceso</p>
         <h2 id="proceso-title">De la visita a la entrega, sin vueltas.</h2>
         <p>Un flujo simple para cotizar con precisión y ejecutar con orden.</p>
       </div>
@@ -203,88 +184,79 @@
     </section>
 
     <section class="contact" id="contacto" aria-labelledby="contacto-title">
-      <div class="contact-intro">
-        <h2 id="contacto-title">Cuéntenos su proyecto.</h2>
-        <p>Respondemos con una cotización orientada a su espacio. También puede escribirnos o llamarnos directamente.</p>
-        <ul class="contact-details">
-          <li>
-            <span>Teléfono</span>
-            <a href="tel:+50322002868">2200-2868</a>
-          </li>
-          <li>
-            <span>Correo</span>
-            <a href="mailto:aire.systemas@gmail.com">aire.systemas@gmail.com</a>
-          </li>
-          <li>
-            <span>Ubicación</span>
-            <p>El Salvador</p>
-          </li>
-          <li>
-            <span>Redes</span>
-            <a href="https://www.instagram.com/AireSystem" target="_blank" rel="noopener noreferrer">@AireSystem</a>
-          </li>
-        </ul>
-      </div>
+      <div class="contact-shell">
+        <div class="contact-intro">
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contacto-title">Cuéntenos su proyecto.</h2>
+          <p>Respondemos con una cotización orientada a su espacio. También puede escribirnos o llamarnos directamente.</p>
+          <ul class="contact-details">
+            <li>
+              <span>Teléfono</span>
+              <a href="tel:+50322002868">2200-2868</a>
+            </li>
+            <li>
+              <span>Correo</span>
+              <a href="mailto:aire.systemas@gmail.com">aire.systemas@gmail.com</a>
+            </li>
+            <li>
+              <span>Ubicación</span>
+              <p>El Salvador</p>
+            </li>
+            <li>
+              <span>Redes</span>
+              <a href="https://www.instagram.com/AireSystem" target="_blank" rel="noopener noreferrer">@AireSystem</a>
+            </li>
+          </ul>
+        </div>
 
-      <form class="contact-form" id="form-contacto" novalidate>
-        <div class="field">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
-          <span class="field-error" data-error-for="nombre"></span>
-        </div>
-        <div class="field">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
-          <span class="field-error" data-error-for="telefono"></span>
-        </div>
-        <div class="field">
-          <label for="email">Correo</label>
-          <input type="email" id="email" name="email" autocomplete="email" required>
-          <span class="field-error" data-error-for="email"></span>
-        </div>
-        <div class="field">
-          <label for="servicio">Servicio de interés</label>
-          <select id="servicio" name="servicio" required>
-            <option value="">Seleccione una opción</option>
-            <option value="climatizacion">Climatizacion</option>
-            <option value="electricidad">Sistemas Electricos</option>
-            <option value="videovigilancia">Videovigilancia</option>
-            <option value="combinado">Proyecto combinado</option>
-          </select>
-          <span class="field-error" data-error-for="servicio"></span>
-        </div>
-        <div class="field field-full">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describa el espacio, ubicación y lo que necesita."></textarea>
-          <span class="field-error" data-error-for="mensaje"></span>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </div>
-      </form>
+        <form class="contact-form" id="form-contacto" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+            <span class="field-error" data-error-for="nombre"></span>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+            <span class="field-error" data-error-for="telefono"></span>
+          </div>
+          <div class="field">
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <span class="field-error" data-error-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="servicio">Servicio de interés</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Seleccione una opción</option>
+              <option value="climatizacion">Climatizacion</option>
+              <option value="electricidad">Sistemas Electricos</option>
+              <option value="videovigilancia">Videovigilancia</option>
+              <option value="mantenimiento">Mantenimiento</option>
+              <option value="combinado">Proyecto combinado</option>
+            </select>
+            <span class="field-error" data-error-for="servicio"></span>
+          </div>
+          <div class="field field-full">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describa el espacio, ubicación y lo que necesita."></textarea>
+            <span class="field-error" data-error-for="mensaje"></span>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-cyan">Enviar solicitud</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <p class="footer-logo">
-          <svg class="logo-mark" viewBox="0 0 32 32" width="22" height="22" aria-hidden="true" focusable="false">
-            <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 3v26"/>
-              <path d="M5.5 9.5l21 13"/>
-              <path d="M5.5 22.5l21-13"/>
-              <path d="M16 7l-2.2-2.2M16 7l2.2-2.2"/>
-              <path d="M16 25l-2.2 2.2M16 25l2.2 2.2"/>
-              <path d="M8.8 11.5l-3-.2M8.8 11.5l-1.4 2.6"/>
-              <path d="M23.2 20.5l3 .2M23.2 20.5l1.4-2.6"/>
-              <path d="M8.8 20.5l-3 .2M8.8 20.5l-1.4-2.6"/>
-              <path d="M23.2 11.5l3-.2M23.2 11.5l1.4 2.6"/>
-            </g>
-          </svg>
-          AIRE SYSTEM
-        </p>
+        <a class="logo logo-footer" href="#inicio" aria-label="AIRE SYSTEM — inicio">
+          <img src="logo.png" alt="Aire System" width="160" height="42" class="logo-img">
+        </a>
         <p class="footer-tagline">Climatizacion, Energia y Seguridad a su alcance.</p>
       </div>
 
@@ -308,8 +280,8 @@
       </ul>
 
       <nav class="footer-nav" aria-label="Pie de página">
-        <a href="#servicios">Servicios</a>
         <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
         <a href="#proceso">Proceso</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -317,6 +289,18 @@
       <p class="footer-copy">&copy; <span id="year"></span> AIRE SYSTEM. El Salvador.</p>
     </div>
   </footer>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/50322002868"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Escribir por WhatsApp al 2200-2868"
+  >
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M16.02 3.2A12.75 12.75 0 0 0 4.4 22.3L3.2 28.8l6.7-1.76A12.75 12.75 0 1 0 16.02 3.2zm7.43 18.12c-.31.88-1.82 1.62-2.55 1.72-.65.09-1.48.13-2.39-.15-.55-.17-1.26-.4-2.17-.78-3.82-1.65-6.3-5.5-6.49-5.76-.19-.25-1.55-2.06-1.55-3.93s.98-2.79 1.33-3.17c.35-.38.76-.48 1.01-.48h.73c.23 0 .54-.09.84.64.31.75 1.05 2.58 1.14 2.76.09.19.15.4.03.65-.12.25-.19.4-.37.62-.19.21-.39.48-.56.64-.19.19-.38.39-.16.76.21.38.95 1.56 2.04 2.53 1.4 1.24 2.58 1.63 2.96 1.81.38.19.6.16.82-.1.22-.25.94-1.1 1.19-1.47.25-.38.5-.31.84-.19.35.13 2.2 1.04 2.58 1.23.38.19.63.28.73.44.09.16.09.93-.22 1.81z"/>
+    </svg>
+  </a>
 
   <script src="script.js"></script>
 </body>
