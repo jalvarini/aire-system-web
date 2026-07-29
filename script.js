@@ -158,6 +158,65 @@
     }
   });
 
+  /* ---------- Quote request modal ---------- */
+  const quoteModal = document.querySelector("#quote-modal");
+  const quoteForm = document.querySelector("#form-cotizacion");
+  const quoteTrigger = document.querySelector("#btn-cotizacion");
+  let quoteLastFocus = null;
+
+  const openQuoteModal = () => {
+    if (!quoteModal) return;
+    quoteLastFocus = document.activeElement;
+    quoteModal.hidden = false;
+    document.body.classList.add("quote-open");
+    quoteModal.querySelector("#cotizacion-nombre")?.focus();
+  };
+
+  const closeQuoteModal = () => {
+    if (!quoteModal || quoteModal.hidden) return;
+    quoteModal.hidden = true;
+    document.body.classList.remove("quote-open");
+    if (quoteLastFocus && typeof quoteLastFocus.focus === "function") {
+      quoteLastFocus.focus();
+    }
+  };
+
+  quoteTrigger?.addEventListener("click", openQuoteModal);
+
+  quoteModal?.querySelectorAll("[data-quote-close]").forEach((el) => {
+    el.addEventListener("click", closeQuoteModal);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (!quoteModal || quoteModal.hidden) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeQuoteModal();
+    }
+  });
+
+  quoteForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const fields = [
+      { label: "Nombre", value: quoteForm.elements.namedItem("nombre")?.value?.trim() || "" },
+      { label: "Nombre de empresa", value: quoteForm.elements.namedItem("empresa")?.value?.trim() || "" },
+      { label: "Tipo de servicio", value: quoteForm.elements.namedItem("servicio")?.value?.trim() || "" },
+      { label: "Telefono", value: quoteForm.elements.namedItem("telefono")?.value?.trim() || "" },
+      { label: "Correo", value: quoteForm.elements.namedItem("correo")?.value?.trim() || "" },
+    ];
+
+    const lines = ["Solicitud de cotizacion - AIRE SYSTEM"];
+    fields.forEach((field) => {
+      if (field.value) lines.push(`${field.label}: ${field.value}`);
+    });
+
+    const message = lines.length > 1 ? lines.join("\n") : "Solicitud de cotizacion - AIRE SYSTEM";
+    const url = `https://wa.me/50378196376?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    closeQuoteModal();
+  });
+
   const revealTargets = document.querySelectorAll(
     ".section-head, .about-inner, .about-pillars, .service-grid, .process-list, .project-grid, .contact-shell"
   );

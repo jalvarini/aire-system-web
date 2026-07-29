@@ -44,12 +44,13 @@
         >
       </div>
       <div class="hero-actions">
-        <a
+        <button
+          type="button"
           class="btn btn-cyan"
-          href="https://wa.me/50378196376"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Solicitar cotización</a>
+          id="btn-cotizacion"
+          aria-haspopup="dialog"
+          aria-controls="quote-modal"
+        >Solicitar cotización</button>
         <a class="btn btn-ghost-dark" href="#servicios">Ver servicios</a>
       </div>
     </section>
@@ -426,6 +427,55 @@
           <span aria-hidden="true">&#10095;</span>
         </button>
       </div>
+    </div>
+  </div>
+
+  <div
+    class="gallery-modal quote-modal"
+    id="quote-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="quote-modal-title"
+    hidden
+  >
+    <div class="gallery-modal-backdrop" data-quote-close></div>
+    <div class="gallery-modal-dialog quote-modal-dialog">
+      <div class="gallery-modal-toolbar">
+        <h2 id="quote-modal-title">Solicitar cotización</h2>
+        <button type="button" class="gallery-close" data-quote-close aria-label="Cerrar formulario de cotización">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="quote-form" id="form-cotizacion" novalidate>
+        <div class="field">
+          <label for="cotizacion-nombre">Nombre</label>
+          <input type="text" id="cotizacion-nombre" name="nombre" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="cotizacion-empresa">Nombre de empresa</label>
+          <input type="text" id="cotizacion-empresa" name="empresa" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="cotizacion-servicio">Tipo de servicio</label>
+          <select id="cotizacion-servicio" name="servicio">
+            <option value="">Seleccione una opción</option>
+            <option value="Sistemas electricos">Sistemas electricos</option>
+            <option value="Sistemas de camaras de seguridad">Sistemas de camaras de seguridad</option>
+            <option value="Aires acondicionados">Aires acondicionados</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cotizacion-telefono">Telefono</label>
+          <input type="tel" id="cotizacion-telefono" name="telefono" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="cotizacion-correo">Correo</label>
+          <input type="email" id="cotizacion-correo" name="correo" autocomplete="email">
+        </div>
+        <div class="quote-form-actions">
+          <button type="submit" class="btn btn-cyan">Enviar</button>
+        </div>
+      </form>
     </div>
   </div>
 

@@ -820,8 +820,57 @@ ol {
   color: var(--cyan);
 }
 
-body.gallery-open {
+body.gallery-open,
+body.quote-open {
   overflow: hidden;
+}
+
+.quote-modal .gallery-modal-toolbar {
+  grid-template-columns: 1fr auto;
+}
+
+.quote-modal-dialog {
+  width: min(100%, 32rem);
+  max-height: min(92vh, 40rem);
+}
+
+.quote-form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem 1.15rem 1.35rem;
+  overflow: auto;
+  background: var(--white);
+}
+
+.quote-form .field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.quote-form .field input,
+.quote-form .field select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  padding: 0.8rem 0.9rem;
+  outline: none;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.quote-form .field input:focus,
+.quote-form .field select:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.18);
+}
+
+.quote-form-actions {
+  margin-top: 0.25rem;
+}
+
+.quote-form-actions .btn {
+  width: 100%;
 }
 
 /* =========================================================
