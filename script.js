@@ -64,6 +64,16 @@
         };
       }),
     },
+    videovigilancia: {
+      title: "Sistemas de Video Vigilancia (Camaras de Seguridad)",
+      images: Array.from({ length: 3 }, (_, i) => {
+        const n = String(i + 1).padStart(2, "0");
+        return {
+          src: `videovigilancia-proy-${n}.jpg`,
+          alt: `Proyecto de videovigilancia ${i + 1}`,
+        };
+      }),
+    },
   };
 
   const galleryModal = document.querySelector("#gallery-modal");
