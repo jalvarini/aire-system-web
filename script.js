@@ -66,7 +66,7 @@
     },
     videovigilancia: {
       title: "Sistemas de Video Vigilancia (Camaras de Seguridad)",
-      images: Array.from({ length: 3 }, (_, i) => {
+      images: Array.from({ length: 8 }, (_, i) => {
         const n = String(i + 1).padStart(2, "0");
         return {
           src: `videovigilancia-proy-${n}.jpg`,
