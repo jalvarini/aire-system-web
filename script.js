@@ -223,7 +223,7 @@
   });
 
   const revealTargets = document.querySelectorAll(
-    ".section-head, .about-inner, .about-pillars, .service-grid, .process-list, .project-grid, .contact-shell"
+    ".section-head, .about-inner, .about-pillars, .service-grid, .process-list, .project-grid, .clients-grid, .contact-shell"
   );
 
   revealTargets.forEach((el) => el.classList.add("reveal"));
