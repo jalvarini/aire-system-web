@@ -5,10 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AIRE SYSTEM — Climatizacion, Energia y Seguridad a su alcance. Mini Split, Chiller, VRF, sistemas eléctricos y videovigilancia en El Salvador.">
   <title>AIRE SYSTEM | Climatizacion, Energia y Seguridad</title>
+  <link rel="icon" href="logo.png">
+  <link rel="canonical" href="https://jalvarini.github.io/aire-system-web/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "AIRE SYSTEM",
+    "url": "https://jalvarini.github.io/aire-system-web/",
+    "telephone": ["+503 2242-1108", "+503 7819-6376"],
+    "email": "aire.systemas@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Salvador",
+      "addressCountry": "SV"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 13.7153862,
+      "longitude": -89.1914859
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+503 2242-1108",
+        "contactType": "customer service",
+        "areaServed": "SV",
+        "availableLanguage": "Spanish"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+503 7819-6376",
+        "contactType": "customer service",
+        "areaServed": "SV",
+        "availableLanguage": "Spanish"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -215,7 +253,7 @@
             aria-controls="gallery-modal"
           >
             <figure class="project-media">
-              <img src="clima-01.jpg" alt="" width="800" height="1200" loading="lazy">
+              <img src="clima-01.jpg" alt="Proyecto de climatización 1" width="800" height="1200" loading="lazy">
             </figure>
             <h3>Proyectos de climatizacion</h3>
           </button>
@@ -229,7 +267,7 @@
             aria-controls="gallery-modal"
           >
             <figure class="project-media">
-              <img src="electrica-proy-01.jpg" alt="" width="1200" height="900" loading="lazy">
+              <img src="electrica-proy-01.jpg" alt="Proyecto de sistema eléctrico 1" width="1200" height="900" loading="lazy">
             </figure>
             <h3>Proyectos de soluciones electricas</h3>
           </button>
@@ -243,7 +281,7 @@
             aria-controls="gallery-modal"
           >
             <figure class="project-media">
-              <img src="videovigilancia-proy-01.jpg" alt="" width="1200" height="900" loading="lazy">
+              <img src="videovigilancia-proy-01.jpg" alt="Proyecto de videovigilancia 1" width="1200" height="900" loading="lazy">
             </figure>
             <h3>Sistemas de Video Vigilancia (Camaras de Seguridad)</h3>
           </button>
@@ -300,6 +338,10 @@
         </div>
 
         <form class="contact-form" id="form-contacto" novalidate>
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <div class="field">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" autocomplete="name" required>
@@ -447,6 +489,10 @@
         </button>
       </div>
       <form class="quote-form" id="form-cotizacion" novalidate>
+        <div class="hp-field" aria-hidden="true">
+          <label for="cotizacion-website">Website</label>
+          <input type="text" id="cotizacion-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="field">
           <label for="cotizacion-nombre">Nombre</label>
           <input type="text" id="cotizacion-nombre" name="nombre" autocomplete="name">

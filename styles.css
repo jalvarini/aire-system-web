@@ -304,6 +304,15 @@ ol {
   border: 0;
 }
 
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .hero {
   padding: calc(var(--header-h) + 1.25rem) 0 1.5rem;
   background:

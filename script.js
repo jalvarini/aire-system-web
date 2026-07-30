@@ -60,7 +60,7 @@
         const n = String(i + 1).padStart(2, "0");
         return {
           src: `electrica-proy-${n}.jpg`,
-          alt: `Proyecto de soluciones eléctricas ${i + 1}`,
+          alt: `Proyecto de sistema eléctrico ${i + 1}`,
         };
       }),
     },
@@ -198,6 +198,11 @@
   quoteForm?.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    const honeypot = quoteForm.elements.namedItem("website");
+    if (honeypot && "value" in honeypot && String(honeypot.value).trim()) {
+      return;
+    }
+
     const fields = [
       { label: "Nombre", value: quoteForm.elements.namedItem("nombre")?.value?.trim() || "" },
       { label: "Nombre de empresa", value: quoteForm.elements.namedItem("empresa")?.value?.trim() || "" },
@@ -306,6 +311,11 @@
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!formStatus) return;
+
+    const honeypot = form.elements.namedItem("website");
+    if (honeypot && "value" in honeypot && String(honeypot.value).trim()) {
+      return;
+    }
 
     if (!validateForm()) {
       formStatus.textContent = "Revise los campos marcados.";
