@@ -42,6 +42,48 @@
     if (event.key === "Escape") setMenuOpen(false);
   });
 
+  /* ---------- Hero cover rotator (portada / portada2) ---------- */
+  const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (heroSlides.length > 0) {
+    let currentHero = Math.floor(Math.random() * heroSlides.length);
+    let heroTimer = null;
+
+    const showHeroSlide = (index) => {
+      heroSlides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === index);
+      });
+      currentHero = index;
+    };
+
+    showHeroSlide(currentHero);
+
+    const scheduleHeroRotate = () => {
+      if (prefersReducedMotion || heroSlides.length < 2) return;
+      const delay = 6000 + Math.random() * 2000;
+      heroTimer = window.setTimeout(() => {
+        let next = currentHero;
+        while (next === currentHero) {
+          next = Math.floor(Math.random() * heroSlides.length);
+        }
+        showHeroSlide(next);
+        scheduleHeroRotate();
+      }, delay);
+    };
+
+    scheduleHeroRotate();
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        if (heroTimer) window.clearTimeout(heroTimer);
+        heroTimer = null;
+      } else if (!heroTimer) {
+        scheduleHeroRotate();
+      }
+    });
+  }
+
   /* ---------- Project gallery modal ---------- */
   const galleries = {
     climatizacion: {
