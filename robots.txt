@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jalvarini.github.io/aire-system-web/sitemap.xml
